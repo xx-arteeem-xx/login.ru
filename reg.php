@@ -109,9 +109,6 @@
                 <button tabindex="8" type="submit" name="signup" >Зарегистрироваться</button>
             </div>
         </form>
-        <h3>
-            <?php echo $err_txt ?>
-        </h3>
         
     </nav>
 
