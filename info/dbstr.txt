@@ -1,0 +1,10 @@
+База данных - Login
+
+    Таблица - users
+        Строка - id
+        Строка - login
+        Строка - password
+        Строка - name
+        Строка - surname
+        Строка - email
+        Строка - description

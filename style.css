@@ -1,0 +1,188 @@
+html{
+    overflow-x: hidden;
+    font-family: sans-serif;
+    color: #fff;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+    margin: 0 2vw;
+    font-size: 1vw;
+    font-weight: 600;
+    border-bottom: 0.2vw solid #ffffff00;
+    transition: 0.2s;
+}
+p{
+    text-align: justify;
+}
+a:hover{
+    border-color: #fff;
+}
+
+h2{
+    font-size: 2vw;
+}
+
+h3{
+    font-size: 1.4vw;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.flex1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header{
+    width: 100vw;
+    height: 10vh;
+    background-color: #0f0f29;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+}
+
+nav{
+    width: 80vw;
+    padding: 20vh 10vw;
+    background-color: #151536;
+    min-height: 40vh;
+}
+
+footer{
+    height: 20vh;
+    padding: 0 10vw;
+    width: 80vw;
+    background-color: #0f0f29;
+}
+
+.content .img1{
+    width: 30vw;
+    height: auto;
+}
+
+.content .img2{
+    width: 50vw;
+    height: auto;
+}
+
+.content .p1{
+    width: 40vw;
+    font-size: 1vw;
+    font-weight: 500;
+}
+.content .p2{
+    font-size: 1vw;
+    font-weight: 500;
+}
+
+.content{
+    margin: 10vh 0;
+}
+
+.name{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    padding: 0;
+    margin: 0;
+}
+
+.name h3{
+    padding: 0;
+    margin: 0;
+}
+
+.lk h4{
+    padding: 1.5vh 0 0 0;
+    margin: 0;
+}
+
+.name :first-child{
+    padding-right: 1vw;
+}
+
+.lk{
+    align-items: center;
+    margin-top: 10vh;
+}
+
+.lk img{
+    width: 25vw;
+    height: 25vw;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin-left: 10vw;
+}
+
+.p3{
+    font-size: 1.2vw;
+    white-space: pre-line;
+
+}
+
+form h3{
+    font-size: 1vw;
+}
+
+form .name{
+    margin: 3vh 0;
+}
+
+form input, select, textarea{
+    background-color: #ffffff00;
+    color: #ffffff;
+    border: none;
+    border-bottom: 0.2vw solid #ffffff;
+    width: 20vw;
+    height: 4vh;
+    font-weight: 600;
+    font-size: 1vw;
+    outline: none;
+}
+
+option{
+    background-color: #0f0f29;
+}
+
+textarea{
+    height: 20vh;
+    border: 0.2vw solid #ffffff;
+}
+
+form .name{
+    align-items: center;
+}
+
+button{
+    margin-top: 10vh;
+    width: 20vw;
+    font-size: 1vw;
+    color: #ffffff;
+    font-weight: 600;
+    background-color: #ffffff00;
+    padding: 2vh 1vw;
+    text-align: center;
+    border: 0.2vw solid #fff;
+    transition: 0.3s;
+
+}
+
+button:hover{
+    background-color: #ffffff;
+    color: #0f0f29;
+}
+
+.photo input{
+    border: none;
+}
