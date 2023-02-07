@@ -28,7 +28,14 @@
                 <p class="p3"> <b>Описание: </b> <?php echo $_SESSION['logged_user']->description ?> </p>
                 <a href="edit.php" style="margin-left: 0">Редактировать</a>
             </div>
-            <img src="img/1.jpg" alt="">
+            <img src="img/from_users/<?php
+             if ($_SESSION['logged_user']->path == ""){
+                echo "def.jpg";
+             }
+             else{
+                echo $_SESSION['logged_user']->path;
+             };
+            ?>" alt="">
         </div>
         
     </nav>

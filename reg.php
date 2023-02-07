@@ -27,6 +27,7 @@
             $user->surname = $data['surname'];
             $user->description = $data['description'];
             $user->password = password_hash($data['pass'], PASSWORD_DEFAULT);
+            $user->path = "";
             R::store($user);
             echo '<div style="position: absolute; top:120vh; left:10vw; color: green"><h3>Вы успешно зарегистрированы!</h3></div>';
         }

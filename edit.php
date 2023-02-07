@@ -66,7 +66,7 @@
                 <h3>
                     О себе: 
                 </h3>
-                <textarea tabindex="3" name="editdescription" value="<?php echo $_SESSION['logged_user']->descpiption ?>"></textarea>
+                <textarea tabindex="3" name="editdescription"><?php echo $_SESSION['logged_user']->description ?></textarea>
             </div>
 
             
