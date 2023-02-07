@@ -20,50 +20,20 @@
 
     <nav>
         <h2> <?php echo $config['sections'][0] ?> </h2>
-        <div class="flex content">
-            <img src="img/1.jpg" alt="" class="img1">
-            <p class="p1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quasi nesciunt, laudantium temporibus ratione quae porro molestiae illum in obcaecati.<br><br>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil est quisquam mollitia placeat! Eius eum quas doloremque quibusdam voluptate velit eligendi porro, maiores dolorem possimus nobis saepe tenetur, iure tempora.<br><br>
+        <?php
 
-            </p>
-        </div>
-        <div class="flex content">
-            <img src="img/3.jpg" alt="" class="img1">
-            <p class="p1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quasi nesciunt, laudantium temporibus ratione quae porro molestiae illum in obcaecati.<br><br>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil est quisquam mollitia placeat! Eius eum quas doloremque quibusdam voluptate velit eligendi porro, maiores dolorem possimus nobis saepe tenetur, iure tempora.<br><br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, cupiditate?
+            $a = 0;
+            $posts = R::find('posts');
+            foreach ($posts as $post){
+                echo '<div class="content" style="border-top: 0.2vw solid #fff; border-bottom: 0.2vw solid #fff; padding: 4vh 0">';
+                echo '<h3>'.$post['name'].'</h3>';
+                echo '<h4>'.$post['login'].'</h4>';
+                echo '<p class="p3">'.$post['description'].'</p> ';
+                echo '</div>';
 
-            </p>
-        </div>
-        <div class="flex content">
-            <img src="img/2.jpg" alt="" class="img1">
-            <p class="p1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quasi nesciunt, laudantium temporibus ratione quae porro molestiae illum in obcaecati.<br><br>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil est quisquam mollitia placeat! Eius eum quas doloremque quibusdam voluptate velit eligendi porro, maiores dolorem possimus nobis saepe tenetur, iure tempora.<br><br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, cupiditate?
+            };
 
-            </p>
-        </div>
-        <div class="flex content">
-            <img src="img/3.jpg" alt="" class="img1">
-            <p class="p1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quasi nesciunt, laudantium temporibus ratione quae porro molestiae illum in obcaecati.<br><br>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil est quisquam mollitia placeat! Eius eum quas doloremque quibusdam voluptate velit eligendi porro, maiores dolorem possimus nobis saepe tenetur, iure tempora.<br><br>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam ut ex iusto eveniet ea nam inventore, consequatur autem libero! Repellendus vitae quibusdam temporibus libero adipisci, laborum dolore voluptate voluptatem commodi?
-
-            </p>
-        </div>
-        <div class="flex content">
-            <img src="img/2.jpg" alt="" class="img1">
-            <p class="p1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quasi nesciunt, laudantium temporibus ratione quae porro molestiae illum in obcaecati.<br><br>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil est quisquam mollitia placeat! Eius eum quas doloremque quibusdam voluptate velit eligendi porro, maiores dolorem possimus nobis saepe tenetur, iure tempora.<br><br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ipsam, nobis hic cumque pariatur fugit. Placeat ratione corporis ducimus nisi, reiciendis aliquid dolores totam, animi fugiat facere esse similique recusandae eius nemo voluptas at tempore ipsam quis cupiditate consequuntur? Architecto tempora repudiandae laudantium excepturi quisquam!
-                
-            </p>
-        </div>
+        ?>
     </nav>
 
     <?php include "includes/footer.php" ?>

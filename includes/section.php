@@ -1,6 +1,6 @@
 <div class="links flex1">
         <a href="index.php"> <?php echo $config['sections'][0] ?> </a>
-        <a href="about.php"> <?php echo $config['sections'][1] ?> </a>
+        <a href="my_posts.php"> <?php echo $config['sections'][1] ?> </a>
         <a href="contacts.php"> <?php echo $config['sections'][2] ?> </a>
     </div>
     <div class="login flex1">

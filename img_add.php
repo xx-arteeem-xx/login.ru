@@ -3,7 +3,7 @@
     require_once 'includes/db.php';
 
     $data = $_POST;
-    if (isset($data['signup'])){
+    if (isset($data['editimg'])){
 
         $errors = array();
         $file = $_FILES['image'];
@@ -30,7 +30,7 @@
                 $sql = "UPDATE users SET path = '".$name."' WHERE id = '".$id."'";
                 R::exec($sql);
                 $_SESSION['logged_user']->path = $name;
-
+                header('Location: /lk.php');
             }
 
 
@@ -73,7 +73,7 @@
 
             
             <div class="name">
-                <button tabindex="2" type="submit" name="signup" >Изменить</button>
+                <button tabindex="2" type="submit" name="editimg" >Изменить</button>
             </div>
         </form>
         
