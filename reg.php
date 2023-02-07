@@ -102,7 +102,7 @@
                 <h3>
                     Расскажите о себе: 
                 </h3>
-                <textarea tabindex="7" name="description" value="<?php echo @$data['description'] ?>"></textarea>
+                <textarea tabindex="7" name="description"><?php echo @$data['description'] ?></textarea>
             </div>
 
             
