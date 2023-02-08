@@ -31,7 +31,7 @@
     
     <nav>
         <h2>Публикация</h2>
-        <form action="/new-post.php" method="POST">
+        <form action="/new_post.php" method="POST">
 
             <div class="name">
                 <h3>

@@ -11,7 +11,7 @@
     if (isset($data['edit'])){
         $post_id = $data['postid'];
         $_SESSION['post_id'] = $post_id;
-        header('Location: /editpost.php');
+        header('Location: /edit_post.php');
     };
 ?>
 

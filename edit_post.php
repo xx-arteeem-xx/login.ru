@@ -33,7 +33,7 @@
     <nav>
 
         <h2>Редактирование</h2>
-        <form action="/editpost.php" method="POST">
+        <form action="/edit_post.php" method="POST">
             <div class="name">
                 <h3>    
                     Название: 

@@ -27,7 +27,7 @@
                 </div>
                 <p class="p3"> <b>Описание: </b> <?php echo $_SESSION['logged_user']->description ?> </p>
                 <a href="edit.php" style="margin-left: 0">Редактировать</a>
-                <a href="new-post.php">Создать публикацию</a>
+                <a href="new_post.php">Создать публикацию</a>
             </div>
             <img src="img/from_users/<?php
              if ($_SESSION['logged_user']->path == ""){
