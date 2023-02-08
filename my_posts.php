@@ -5,8 +5,13 @@
     $data = $_POST;
     if (isset($data['delete'])){
         $post_id = $data['postid'];
-        $posts = R::load('posts', $post_id);
-        R::trash($posts); 
+        $delposts = R::load('posts', $post_id);
+        R::trash($delposts); 
+    };
+    if (isset($data['edit'])){
+        $post_id = $data['postid'];
+        $_SESSION['post_id'] = $post_id;
+        header('Location: /editpost.php');
     };
 ?>
 
@@ -41,7 +46,10 @@
                     echo '<p class="p3">'.$post['description'].'</p> ';
                     echo '  <form action="my_posts.php" method="post">
                                 <input type="hidden" value="'.$post['id'].'" name="postid">
-                                <button type="submit" name="delete">Удалить</button>
+                                <div class="flex" style="width: 45vw">
+                                    <button type="submit" name="delete">Удалить</button>
+                                    <button type="submit" name="edit">Редактировать</button>
+                                </div>
                             </form>';
                     echo '</div>';
                 }

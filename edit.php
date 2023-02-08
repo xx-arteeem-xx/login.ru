@@ -6,24 +6,19 @@
     if (isset($data['edit'])){
 
         $id = $_SESSION['logged_user']->id;
+        $edit = R::load('users', $id);
 
+        $edit->name = $data['editname'];
+        $_SESSION['logged_user']->name = $data['editname'];
 
-        if ($data['editname'] != $_SESSION['logged_user']->name){
-            $sql = "UPDATE users SET name = '".$data['editname']."' WHERE id = '".$id."'";
-            R::exec($sql);
-            $_SESSION['logged_user']->name = $data['editname'];
-        }
-        if ($data['editsurname'] != $_SESSION['logged_user']->surname){
-            $sql = "UPDATE users SET surname = '".$data['editsurname']."' WHERE id = '".$id."'";
-            R::exec($sql);
-            $_SESSION['logged_user']->surname = $data['editsurname'];
-        }
-        if ($data['editdescription'] != $_SESSION['logged_user']->description){
-            $sql = "UPDATE users SET description = '".$data['editdescription']."' WHERE id = '".$id."'";
-            R::exec($sql);
-            $_SESSION['logged_user']->description = $data['editdescription'];
-        }
-        
+        $edit->surname = $data['editsurname'];
+        $_SESSION['logged_user']->surname = $data['editsurname'];
+
+        $edit->description = $data['editdescription'];
+        $_SESSION['logged_user']->description = $data['editdescription'];
+
+        R::store( $edit );
+
         header('Location: /lk.php');
 
     };

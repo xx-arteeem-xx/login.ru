@@ -30,7 +30,7 @@
                 echo '<h4>'.$post['login'].'</h4>';
                 echo '<p class="p3">'.$post['description'].'</p> ';
                 echo '</div>';
-
+ 
             };
 
         ?>
