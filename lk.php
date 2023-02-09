@@ -49,7 +49,7 @@
         <?php
             $log_id = $_SESSION['logged_user']->id;
             $k = 0;
-            $posts = R::find('posts');
+            $posts = R::find('posts', 'ORDER BY id DESC');
             foreach ($posts as $post){
                 if ($post['user_id'] == $log_id){
                     echo '<div class="content" style="border-top: 0.2vw solid #fff; border-bottom: 0.2vw solid #fff; padding: 4vh 0">';

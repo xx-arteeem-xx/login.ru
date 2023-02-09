@@ -36,25 +36,33 @@
 
         <?php
             $log_id = $_SESSION['logged_user']->id;
-            $a = 0;
-            $posts = R::find('posts');
-            foreach ($posts as $post){
-                if ($post['user_id'] == $log_id){
-                    echo '<div class="content" style="border-top: 0.2vw solid #fff; border-bottom: 0.2vw solid #fff; padding: 4vh 0">';
-                    echo '<h3>'.$post['name'].'</h3>';
-                    echo '<h4>'.$post['login'].'</h4>';
-                    echo '<p class="p3">'.$post['description'].'</p> ';
-                    echo '  <form action="my_posts.php" method="post">
-                                <input type="hidden" value="'.$post['id'].'" name="postid">
-                                <div class="flex" style="width: 45vw">
-                                    <button type="submit" name="delete">Удалить</button>
-                                    <button type="submit" name="edit">Редактировать</button>
-                                </div>
-                            </form>';
-                    echo '</div>';
+            $friends = R::find('friends');
+            foreach ($friends as $friend){
+                $errors = array();
+                if (($friend->idsent == $log_id)  && ($friend->value == 2)){
+                    $friend_id = $friend->idget;
                 }
-
+                else{
+                    if (($friend->idget == $log_id)  && ($friend->value == 2)){
+                        $friend_id = $friend->idsent;
+                    }
+                    else{
+                        $errors[] = "Публикаций не найдено!";
+                    };
+                };
+                if (empty($errors)){
+                    $posts = R::find('posts', 'user_id = ?' ,array($friend_id));
+                    foreach($posts as $post){
+                        echo '<div class="content" style="border-top: 0.2vw solid #fff; border-bottom: 0.2vw solid #fff; padding: 4vh 0">';
+                        echo '<h3>'.$post->name.'</h3>';
+                        echo '<h4>'.$post->login.'</h4>';
+                        echo '<p class="p3">'.$post->description.'</p> ';
+                        echo '</div>';
+                    };
+                    
+                }; 
             };
+            
         ?>
     </nav>
             

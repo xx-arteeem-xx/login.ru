@@ -59,8 +59,9 @@
     };
 
     if (isset($data['go'])){
-        $friend_id = $data['friend_id'];
-        header("Location: /friend_profile.php?friend_id=$friend_id");
+        $_SESSION['friend_id'] = $data['friend_id'];
+        $_SESSION['table_id'] = $data['table_id'];
+        header('Location: /friend_profile.php');
     };
 ?>
 
@@ -156,7 +157,7 @@
         </h3>
 
         <?php
-            $friends = R::find('friends');
+            $friends = R::find('friends', 'ORDER BY id DESC');
             $k = 0;
             foreach($friends as $friend){
                 if ((($friend->idget == $_SESSION['logged_user']->id) || ($friend->idsent == $_SESSION['logged_user']->id)) && ($friend->value == 2)) {
@@ -175,6 +176,7 @@
                         </div>
                         <form action="friends.php" method="POST">
                             <input type="hidden" name="friend_id" value="'.$usersent->id.'">
+                            <input type="hidden" name="table_id" value="'.$friend->id.'">
                             <button type="submit" name="go" style="margin: 0">Посмотреть профиль</button>
                         </form>
                     </div>';

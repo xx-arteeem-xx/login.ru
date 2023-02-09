@@ -23,7 +23,7 @@
         <?php
 
             $a = 0;
-            $posts = R::find('posts');
+            $posts = R::find('posts', 'ORDER BY id DESC');
             foreach ($posts as $post){
                 echo '<div class="content" style="border-top: 0.2vw solid #fff; border-bottom: 0.2vw solid #fff; padding: 4vh 0">';
                 echo '<h3>'.$post['name'].'</h3>';

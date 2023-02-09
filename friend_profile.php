@@ -1,10 +1,15 @@
 <?php
     require_once 'includes/config.php';
     require_once 'includes/db.php';
-    $friend_id = $_GET['friend_id'];
+    $friend_id = $_SESSION['friend_id'];
     $friend = R::load('users', $friend_id);
-
-
+    $table_id = $_SESSION['table_id'];
+    $unfriend = R::load('friends', $table_id);
+    $data = $_POST;
+    if (isset($data['del'])){
+        R::trash($unfriend);
+        header('Location: /friends.php');
+    };
 
 ?>
 
@@ -30,8 +35,12 @@
                     <h4> <?php echo $friend->login ?> </h4> 
                 </div>
                 <p class="p3"> <b>Описание: </b> <?php echo $friend->description ?> </p>
+                <form action="friend_profile.php" method="POST">
+                    <button type="submit" name="del">Удалить из друзей</button>
+                </form>
             </div>
             <img src="img/from_users/<?php echo $friend->path; ?>" alt="">
+
         </div>
         <h2>
            Публикации
@@ -39,7 +48,7 @@
         <?php
             $log_id = $friend->id;
             $k = 0;
-            $posts = R::find('posts');
+            $posts = R::find('posts', 'ORDER BY id DESC');
             foreach ($posts as $post){
                 if ($post['user_id'] == $log_id){
                     echo '<div class="content" style="border-top: 0.2vw solid #fff; border-bottom: 0.2vw solid #fff; padding: 4vh 0">';
@@ -52,7 +61,7 @@
                 };
             };
             if ($k == 0){
-                echo '<h3>Публикаций не найдено!</h3>';
+                echo '<h4>Публикаций не найдено!</h4>';
             };
         ?>
     </nav>
